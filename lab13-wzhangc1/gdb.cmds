@@ -1,0 +1,8 @@
+# stop at the first instruction in main
+# set disassemble-next-line on
+source tracei.py
+b *0x0000555555554740
+commands
+python tracei()
+end
+run

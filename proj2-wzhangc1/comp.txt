@@ -1,0 +1,501 @@
+warehouse.c: In function ‘main’:
+warehouse.c:36:17: error: ‘i’ undeclared (first use in this function)
+    fetchBin(bin,i);
+                 ^
+warehouse.c:36:17: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c: In function ‘main’:
+warehouse.c:36:17: error: ‘i’ undeclared (first use in this function)
+    fetchBin(bin,i);
+                 ^
+warehouse.c:36:17: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c: In function ‘main’:
+warehouse.c:33:17: error: ‘i’ undeclared (first use in this function)
+    fetchBin(bin,i); 
+                 ^
+warehouse.c:33:17: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c: In function ‘main’:
+warehouse.c:33:17: error: ‘i’ undeclared (first use in this function)
+    fetchBin(bin,i); 
+                 ^
+warehouse.c:33:17: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c: In function ‘main’:
+warehouse.c:33:17: error: ‘i’ undeclared (first use in this function)
+    fetchBin(bin,i); 
+                 ^
+warehouse.c:33:17: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c: In function ‘main’:
+warehouse.c:33:17: error: ‘i’ undeclared (first use in this function)
+    fetchBin(bin,i); 
+                 ^
+warehouse.c:33:17: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c: In function ‘main’:
+warehouse.c:34:17: error: ‘i’ undeclared (first use in this function)
+    fetchBin(bin,i); 
+                 ^
+warehouse.c:34:17: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c: In function ‘main’:
+warehouse.c:34:17: error: ‘i’ undeclared (first use in this function)
+    fetchBin(bin,i); 
+                 ^
+warehouse.c:34:17: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c: In function ‘main’:
+warehouse.c:34:17: error: ‘i’ undeclared (first use in this function)
+    fetchBin(bin,i); 
+                 ^
+warehouse.c:34:17: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c: In function ‘main’:
+warehouse.c:34:17: error: ‘i’ undeclared (first use in this function)
+    fetchBin(bin,i); 
+                 ^
+warehouse.c:34:17: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c: In function ‘main’:
+warehouse.c:34:17: error: ‘i’ undeclared (first use in this function)
+    fetchBin(bin,i); 
+                 ^
+warehouse.c:34:17: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c: In function ‘main’:
+warehouse.c:34:17: error: ‘i’ undeclared (first use in this function)
+    fetchBin(bin,i); 
+                 ^
+warehouse.c:34:17: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c: In function ‘main’:
+warehouse.c:34:17: error: ‘i’ undeclared (first use in this function)
+    fetchBin(bin,i); 
+                 ^
+warehouse.c:34:17: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c: In function ‘main’:
+warehouse.c:34:17: error: ‘i’ undeclared (first use in this function)
+    fetchBin(bin,i); 
+                 ^
+warehouse.c:34:17: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c: In function ‘main’:
+warehouse.c:34:17: error: ‘i’ undeclared (first use in this function)
+    fetchBin(bin,i); 
+                 ^
+warehouse.c:34:17: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c: In function ‘main’:
+warehouse.c:24:27: error: ‘pd’ undeclared (first use in this function)
+    printf("%d %d %d %d\n",pd, bin, binInSlot(i), i);
+                           ^~
+warehouse.c:24:27: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c: In function ‘main’:
+warehouse.c:24:27: error: ‘pd’ undeclared (first use in this function)
+    printf("%d %d %d %d\n",pd, bin, binInSlot(i), i);
+                           ^~
+warehouse.c:24:27: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c: In function ‘main’:
+warehouse.c:31:16: error: ‘i’ undeclared (first use in this function)
+   fetchBin(bin,i-1); 
+                ^
+warehouse.c:31:16: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c: In function ‘main’:
+warehouse.c:31:16: error: ‘i’ undeclared (first use in this function)
+   fetchBin(bin,i-1); 
+                ^
+warehouse.c:31:16: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c: In function ‘main’:
+warehouse.c:31:16: error: ‘i’ undeclared (first use in this function)
+   fetchBin(bin,i-1); 
+                ^
+warehouse.c:31:16: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c: In function ‘main’:
+warehouse.c:31:16: error: ‘i’ undeclared (first use in this function)
+   fetchBin(bin,i-1); 
+                ^
+warehouse.c:31:16: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c: In function ‘main’:
+warehouse.c:24:11: warning: too many arguments for format [-Wformat-extra-args]
+    printf("%d %d %d %d\n",pn, bin, binInSlot(i), i, benchSlot);
+           ^~~~~~~~~~~~~~~
+warehouse.c: In function ‘main’:
+warehouse.c:24:11: warning: too many arguments for format [-Wformat-extra-args]
+    printf("%d %d %d %d\n",pn, bin, binInSlot(i), i, benchSlot);
+           ^~~~~~~~~~~~~~~
+warehouse.c: In function ‘main’:
+warehouse.c:22:3: error: unknown type name ‘bool’
+   bool binInBench = false;
+   ^~~~
+warehouse.c:22:21: error: ‘false’ undeclared (first use in this function)
+   bool binInBench = false;
+                     ^~~~~
+warehouse.c:22:21: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c:26:11: warning: too many arguments for format [-Wformat-extra-args]
+    printf("%d %d %d %d\n",pn, bin, binInSlot(i), i, binInBench);
+           ^~~~~~~~~~~~~~~
+warehouse.c: In function ‘main’:
+warehouse.c:22:3: error: unknown type name ‘bool’
+   bool binInBench = false;
+   ^~~~
+warehouse.c:22:21: error: ‘false’ undeclared (first use in this function)
+   bool binInBench = false;
+                     ^~~~~
+warehouse.c:22:21: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c:26:11: warning: too many arguments for format [-Wformat-extra-args]
+    printf("%d %d %d %d\n",pn, bin, binInSlot(i), i, binInBench);
+           ^~~~~~~~~~~~~~~
+warehouse.c:29:18: error: ‘true’ undeclared (first use in this function)
+     binInBench = true;
+                  ^~~~
+warehouse.c:21:7: warning: unused variable ‘benchSlot’ [-Wunused-variable]
+   int benchSlot = -1;
+       ^~~~~~~~~
+warehouse.c: In function ‘main’:
+warehouse.c:22:3: error: unknown type name ‘bool’
+   bool binInBench = false;
+   ^~~~
+warehouse.c:22:21: error: ‘false’ undeclared (first use in this function)
+   bool binInBench = false;
+                     ^~~~~
+warehouse.c:22:21: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c:26:11: warning: too many arguments for format [-Wformat-extra-args]
+    printf("%d %d %d %d\n",pn, bin, binInSlot(i), i, binInBench);
+           ^~~~~~~~~~~~~~~
+warehouse.c:29:18: error: ‘true’ undeclared (first use in this function)
+     binInBench = true;
+                  ^~~~
+warehouse.c:21:7: warning: unused variable ‘benchSlot’ [-Wunused-variable]
+   int benchSlot = -1;
+       ^~~~~~~~~
+warehouse.c: In function ‘main’:
+warehouse.c:22:3: error: unknown type name ‘bool’
+   bool binInBench = false;
+   ^~~~
+warehouse.c:22:21: error: ‘false’ undeclared (first use in this function)
+   bool binInBench = false;
+                     ^~~~~
+warehouse.c:22:21: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c:26:11: warning: too many arguments for format [-Wformat-extra-args]
+    printf("%d %d %d %d\n",pn, bin, binInSlot(i), i, binInBench);
+           ^~~~~~~~~~~~~~~
+warehouse.c:29:18: error: ‘true’ undeclared (first use in this function)
+     binInBench = true;
+                  ^~~~
+warehouse.c: In function ‘main’:
+warehouse.c:22:3: error: unknown type name ‘bool’
+   bool binInBench = false;
+   ^~~~
+warehouse.c:22:21: error: ‘false’ undeclared (first use in this function)
+   bool binInBench = false;
+                     ^~~~~
+warehouse.c:22:21: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c:26:11: warning: too many arguments for format [-Wformat-extra-args]
+    printf("%d %d %d %d\n",pn, bin, binInSlot(i), i, binInBench);
+           ^~~~~~~~~~~~~~~
+warehouse.c:29:18: error: ‘true’ undeclared (first use in this function)
+     binInBench = true;
+                  ^~~~
+warehouse.c: In function ‘main’:
+warehouse.c:26:11: warning: too many arguments for format [-Wformat-extra-args]
+    printf("%d %d %d %d\n",pn, bin, binInSlot(i), i, binInBench);
+           ^~~~~~~~~~~~~~~
+warehouse.c: In function ‘main’:
+warehouse.c:26:11: warning: too many arguments for format [-Wformat-extra-args]
+    printf("%d %d %d %d\n",pn, bin, binInSlot(i), i, binInBench);
+           ^~~~~~~~~~~~~~~
+warehouse.c: In function ‘main’:
+warehouse.c:26:11: warning: too many arguments for format [-Wformat-extra-args]
+    printf("-----%d %d %d %d\n",pn, bin, binInSlot(i), i, binInBench);
+           ^~~~~~~~~~~~~~~~~~~~
+warehouse.c: In function ‘main’:
+warehouse.c:26:11: warning: too many arguments for format [-Wformat-extra-args]
+    printf("-----%d %d %d %d\n",pn, bin, binInSlot(i), i, binInBench);
+           ^~~~~~~~~~~~~~~~~~~~
+warehouse.c: In function ‘main’:
+warehouse.c:26:11: warning: too many arguments for format [-Wformat-extra-args]
+    printf("-----%d %d %d %d\n",pn, bin, binInSlot(i), i, binInBench);
+           ^~~~~~~~~~~~~~~~~~~~
+warehouse.c: In function ‘main’:
+warehouse.c:28:11: warning: too many arguments for format [-Wformat-extra-args]
+    printf("-----%d %d %d %d\n",pn, bin, binInSlot(i), i, binInBench);
+           ^~~~~~~~~~~~~~~~~~~~
+warehouse.c: In function ‘main’:
+warehouse.c:29:11: warning: too many arguments for format [-Wformat-extra-args]
+    printf("-----%d %d %d %d\n",pn, bin, binInSlot(i), i, binInBench);
+           ^~~~~~~~~~~~~~~~~~~~
+warehouse.c: In function ‘main’:
+warehouse.c:29:11: warning: too many arguments for format [-Wformat-extra-args]
+    printf("-----%d %d %d %d\n",pn, bin, binInSlot(i), i, binInBench);
+           ^~~~~~~~~~~~~~~~~~~~
+warehouse.c: In function ‘main’:
+warehouse.c:29:11: warning: too many arguments for format [-Wformat-extra-args]
+    printf("-----%d %d %d %d\n",pn, bin, binInSlot(i), i, binInBench);
+           ^~~~~~~~~~~~~~~~~~~~
+warehouse.c: In function ‘main’:
+warehouse.c:29:11: warning: too many arguments for format [-Wformat-extra-args]
+    printf("-----%d %d %d %d\n",pn, bin, binInSlot(i), i, binInBench);
+           ^~~~~~~~~~~~~~~~~~~~
+warehouse.c: In function ‘main’:
+warehouse.c:29:11: warning: too many arguments for format [-Wformat-extra-args]
+    printf("-----%d %d %d %d\n",pn, bin, binInSlot(i), i, binInBench);
+           ^~~~~~~~~~~~~~~~~~~~
+warehouse.c: In function ‘main’:
+warehouse.c:29:11: warning: too many arguments for format [-Wformat-extra-args]
+    printf("-----%d %d %d %d\n",pn, bin, binInSlot(i), i, binInBench);
+           ^~~~~~~~~~~~~~~~~~~~
+warehouse.c: In function ‘main’:
+warehouse.c:30:11: warning: too many arguments for format [-Wformat-extra-args]
+    printf("-----%d %d %d %d\n",pn, bin, binInSlot(i), i, binInBench);
+           ^~~~~~~~~~~~~~~~~~~~
+warehouse.c: In function ‘main’:
+warehouse.c:30:11: warning: too many arguments for format [-Wformat-extra-args]
+    printf("-----%d %d %d %d\n",pn, bin, binInSlot(i), i, binInBench);
+           ^~~~~~~~~~~~~~~~~~~~
+warehouse.c: In function ‘main’:
+warehouse.c:30:11: warning: too many arguments for format [-Wformat-extra-args]
+    printf("-----%d %d %d %d\n",pn, bin, binInSlot(i), i, binInBench);
+           ^~~~~~~~~~~~~~~~~~~~
+warehouse.c: In function ‘main’:
+warehouse.c:34:11: warning: too many arguments for format [-Wformat-extra-args]
+    printf("-----%d %d %d %d\n",pn, bin, binInSlot(i), i, binInBench);
+           ^~~~~~~~~~~~~~~~~~~~
+warehouse.c: In function ‘main’:
+warehouse.c:34:11: warning: too many arguments for format [-Wformat-extra-args]
+    printf("-----%d %d %d %d\n",pn, bin, binInSlot(i), i, binInBench);
+           ^~~~~~~~~~~~~~~~~~~~
+warehouse.c: In function ‘main’:
+warehouse.c:36:11: warning: too many arguments for format [-Wformat-extra-args]
+    printf("-----%d %d %d %d\n",pn, bin, binInSlot(i), i, binInBench);
+           ^~~~~~~~~~~~~~~~~~~~
+warehouse.c: In function ‘main’:
+warehouse.c:36:11: warning: too many arguments for format [-Wformat-extra-args]
+    printf("-----%d %d %d %d\n",pn, bin, binInSlot(i), i, binInBench);
+           ^~~~~~~~~~~~~~~~~~~~
+warehouse.c: In function ‘main’:
+warehouse.c:16:18: error: expected expression before ‘{’ token
+  binCount[100] = {0};
+                  ^
+warehouse.c: In function ‘main’:
+warehouse.c:16:18: error: expected expression before ‘{’ token
+  binCount[100] = {0};
+                  ^
+warehouse.c: In function ‘main’:
+warehouse.c:16:18: error: expected expression before ‘{’ token
+  binCount[100] = {0};
+                  ^
+warehouse.c: In function ‘main’:
+warehouse.c:16:18: error: expected expression before ‘{’ token
+  binCount[100] = {0};
+                  ^
+warehouse.c: In function ‘main’:
+warehouse.c:15:22: error: invalid initializer
+  int binCount[100] = 0;
+                      ^
+warehouse.c: In function ‘main’:
+warehouse.c:93:3: error: ‘cin’ undeclared (first use in this function)
+   cin >> j;
+   ^~~
+warehouse.c:93:3: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c: In function ‘main’:
+warehouse.c:93:3: error: ‘cin’ undeclared (first use in this function)
+   cin >> j;
+   ^~~
+warehouse.c:93:3: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c: In function ‘main’:
+warehouse.c:93:8: warning: implicit declaration of function ‘getChar’ [-Wimplicit-function-declaration]
+   j >> getChar();
+        ^~~~~~~
+warehouse.c:93:5: warning: value computed is not used [-Wunused-value]
+   j >> getChar();
+   ~~^~~~~~~~~~~~
+warehouse.c:93:5: warning: ‘j’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   j >> getChar();
+   ~~^~~~~~~~~~~~
+/tmp/cc5FXpTm.o: In function `main':
+/import/linux/home1/wzhangc1/Desktop/CS220/proj2-wzhangc1/warehouse.c:93: undefined reference to `getChar'
+collect2: error: ld returned 1 exit status
+warehouse.c: In function ‘main’:
+warehouse.c:93:8: warning: implicit declaration of function ‘getChar’ [-Wimplicit-function-declaration]
+   j >> getChar();
+        ^~~~~~~
+warehouse.c:93:5: warning: value computed is not used [-Wunused-value]
+   j >> getChar();
+   ~~^~~~~~~~~~~~
+warehouse.c:93:5: warning: ‘j’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   j >> getChar();
+   ~~^~~~~~~~~~~~
+/tmp/ccF4Pw12.o: In function `main':
+/import/linux/home1/wzhangc1/Desktop/CS220/proj2-wzhangc1/warehouse.c:93: undefined reference to `getChar'
+collect2: error: ld returned 1 exit status
+warehouse.c: In function ‘main’:
+warehouse.c:93:7: warning: implicit declaration of function ‘getChar’ [-Wimplicit-function-declaration]
+   j = getChar();
+       ^~~~~~~
+warehouse.c:92:8: warning: variable ‘j’ set but not used [-Wunused-but-set-variable]
+   char j;
+        ^
+/tmp/ccFnIWLN.o: In function `main':
+/import/linux/home1/wzhangc1/Desktop/CS220/proj2-wzhangc1/warehouse.c:93: undefined reference to `getChar'
+collect2: error: ld returned 1 exit status
+warehouse.c: In function ‘main’:
+warehouse.c:93:7: warning: implicit declaration of function ‘getChar’ [-Wimplicit-function-declaration]
+   j = getChar();
+       ^~~~~~~
+warehouse.c:92:8: warning: variable ‘j’ set but not used [-Wunused-but-set-variable]
+   char j;
+        ^
+/tmp/cccV0j0E.o: In function `main':
+/import/linux/home1/wzhangc1/Desktop/CS220/proj2-wzhangc1/warehouse.c:93: undefined reference to `getChar'
+collect2: error: ld returned 1 exit status
+warehouse.c: In function ‘main’:
+warehouse.c:92:8: warning: unused variable ‘j’ [-Wunused-variable]
+   char j;
+        ^
+warehouse.c: In function ‘main’:
+warehouse.c:92:8: warning: unused variable ‘j’ [-Wunused-variable]
+   char j;
+        ^
+warehouse.c: In function ‘main’:
+warehouse.c:92:8: warning: unused variable ‘j’ [-Wunused-variable]
+   char j;
+        ^
+warehouse.c: In function ‘main’:
+warehouse.c:92:8: warning: unused variable ‘j’ [-Wunused-variable]
+   char j;
+        ^
+warehouse.c: In function ‘main’:
+warehouse.c:92:8: warning: unused variable ‘j’ [-Wunused-variable]
+   char j;
+        ^
+warehouse.c: In function ‘main’:
+warehouse.c:92:8: warning: unused variable ‘j’ [-Wunused-variable]
+   char j;
+        ^
+warehouse.c: In function ‘main’:
+warehouse.c:76:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:76:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:87:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:87:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:87:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:72:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c:87:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:87:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:88:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:88:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:88:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:88:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:56:23: error: ‘k’ undeclared (first use in this function)
+   printf("------%d ", k);
+                       ^
+warehouse.c:56:23: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c:88:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:88:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:87:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:87:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:87:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:87:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:87:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:88:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:88:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:88:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:88:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:88:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:88:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:88:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:88:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:88:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:88:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c: In function ‘main’:
+warehouse.c:142:3: error: ‘c’ undeclared (first use in this function)
+   c=getchar();
+   ^
+warehouse.c:142:3: note: each undeclared identifier is reported only once for each function it appears in
+warehouse.c: In function ‘main’:
+warehouse.c:142:7: warning: variable ‘c’ set but not used [-Wunused-but-set-variable]
+   int c;
+       ^
+warehouse.c: In function ‘main’:
+warehouse.c:142:7: warning: variable ‘c’ set but not used [-Wunused-but-set-variable]
+   int c;
+       ^
+warehouse.c: In function ‘main’:
+warehouse.c:104:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+warehouse.c:158:7: warning: variable ‘c’ set but not used [-Wunused-but-set-variable]
+   int c;
+       ^

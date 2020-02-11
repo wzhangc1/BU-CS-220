@@ -1,0 +1,7 @@
+The future will be better tomorrow.
+1 2 4 8 16 32
+1 -928
+4 19 Baxter
+jdoefg
+1 3 6 4 5 2
+99
