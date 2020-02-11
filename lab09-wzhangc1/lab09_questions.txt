@@ -1,0 +1,131 @@
+In the grade2gp function in gpa.c, there are two select statements. Looking at 
+the C code in gpa.c and the x86 expansion of that code in gpa.s (available as
+a target in the Makefile), answer the following questions...
+
+1. In the instruction at offset 7b8, "mov    %rdi,-0x18(%rbp)", what C
+	variable is represented by the value in %rdi? :  grade
+   
+ 2. Looking at the expansion of the "switch(grade[0])" statement in C...
+ 	A. What does the x86 instruction at offset 7c0, "movzbl (%rax),%eax"
+ 		put into %eax? : grade[0]
+ 		
+ 	Note: The next instruction at offset 7c3 extends the sign bit of the
+ 	low order byte. I have no idea why gcc didn't just code this as
+ 	"movsbl (%rax),%eax" in the first place, but I'm not an x86 expert.
+ 	
+ 	B. At offset 7c6, the instruction is "cmp    $0x42,%eax". What is the
+ 		significance of $0x42? : ASCII code for 'B' 
+ 		
+ 	C. At offset 7c9, in the instruction "je     833 <grade2gp+0x7f>", when
+ 		will the jump be taken? : if 0x42 is equal to grade[0]
+ 		
+ 	Note: Look at gpa.s to see what code is associated with offset 833, the
+ 	target of the jump in question 2.C.
+ 	
+ 	D. At offset 7c3, in the instruction "jg     7da <grade2gp+0x26>", when
+ 		will the jump be taken? : if 0x42 is greater than grade[0]
+ 		
+ 	E. At offset 7d3, in the instruction "je     7f1 <grade2gp+0x3d>", when 
+ 		will the jump be taken? : if 0x41 is equal to grade[0]
+ 		
+ 	F. At offset 7d5, in the instruction "jmpq   935 <grade2gp+0x181>", when
+ 		will the jump be taken? : if 0x41 is not equal to grade[0]
+ 		
+ 	G. At offset 7dd, in the instruction "je     890 <grade2gp+0xdc>", when
+ 		will the jump be taken? : if 0x43 is equal to grade[0]
+ 		
+ 	H. At offset 7e6, in the instruction "je     8e4 <grade2gp+0x130>", when
+		will the jump be taken? : if 0x44 is equal to grade[0]
+		
+	I. At offset 7ec, in the instruction "jmpq   935 <grade2gp+0x181>", when
+		will the jump be taken? : if 0x44 is not equal to grade[0]
+		
+	J. Did the first switch statement use a jump table or did the GCC compiler
+		translate the switch into netsed if/then/else if logic? :
+		
+		The GCC compiler translate the switch into netsed if/then/else if logic
+	
+3. Looking at the case statements associated with the first switch statement...
+
+	A. What is the offset of the case 'A' block? : 7f1
+	B. What is the offset of the case 'B' block? : 833
+	C. What is the offset of the case 'C' block? : 890
+	D. What is the offset of the case 'D' block? : 8e4
+	E. What is the offset of the default block?  : 935
+	F. What x86 instruction implements the "break" statement at the end of the
+		case 'A' block? :  jmpq 93c <grade2gp+392>
+		
+4. In the grade2gp function, the "gr" variable is kept at -0x4(%rbp). Look through
+	the x86 generated code in the first switch statement, specifically assignments
+	to the "gr" variable, to find the numeric values associated with the enumerated 
+	literals described in "enum lgrades".	
+	A. What numeric value is associated with the literal A  : 0x0
+	B. What numeric value is associated with the literal Am : 0x1
+	C. What numeric value is associated with the literal Bp : 0x2
+	D. What numeric value is associated with the literal B  : 0x3
+	E. What numeric value is associated with the literal Bm : 0x4
+	F. What numeric value is associated with the literal Cp : 0x5
+	G. What numeric value is associated with the literal C  : 0x6
+	H. What numeric value is associated with the literal Cm : 0x7
+	I. What numeric value is associated with the literal Dp : 0x8
+	J. What numeric value is associated with the literal D  : 0x9
+	K. What numeric value is associated with the literal Dm : 0xa
+	L. What numeric value is associated with the literal F  : 0xb
+	
+5. Looking at the second switch statement
+	A. at offset 940, in the instruction "ja     9ba <grade2gp+0x206>", when
+		will the jump be taken? Hint: Remember, "ja" is an UNSIGNED compare, but
+		the gcc compiler may use a signed variable for -0x4(%rbp). Think about
+		what happens when -0x4(%rbp) is negative as well as positive. 
+		: if 0xb is greater than gr, where ZF and CF are equal to 0
+		
+	B. at offset 945, in the instruction "lea    0x0(,%rax,4),%rdx", what 
+		value will be put into %rdx? : 4 * rax
+		
+	C. at offset 94d, in the instruction "lea    0x118(%rip),%rax", since %rip
+		has the offset of 954 (it has already been incremented to point to the
+		next sequential instruction), what OFFSET would be put into %rax? : a6c
+		
+	Note: the actual address depends on where the gpa code is loaded, but as
+	long as we stick to offsets, we can keep track of things OK.
+	
+	D. The values at offset a6c are not contained in gpa.s. However, it is 
+		possible to see what is at offset a6c by looking at the "read-only
+		data" section of the gpa binary. Use the "rodata" target in the 
+		Makefile to see the contents of the "read-only data" section. Remember
+		you are running on a little endian machine. To make things a little
+		easier, I have created the following table, which is a transcription
+		of the information starting at offset a6c in the read-only data:
+		
+		Offset | Value (hex) | Value (dec) | a6c+value (hex)
+		-------+-------------+-------------+----------------
+		   a6c |    fffffefa |        -262 |       966
+		   a70 |    ffffff10 |        -240 |       97c
+		   a74 |    ffffff08 |        -248 |       974
+		   a78 |    ffffff0f |        -241 |       97b
+		   a7c |    ffffff16 |        -234 |       982
+		   a80 |    ffffff1d |        -227 |       989
+		   a84 |    ffffff24 |        -220 |       990
+		   a88 |    ffffff2b |        -213 |       997
+		   a8c |    ffffff32 |        -206 |       99e
+		   a90 |    ffffff39 |        -199 |       9a5
+		   a94 |    ffffff40 |        -192 |       9ac
+		   a98 |    ffffff47 |        -185 |       9b3
+		   
+		If we assume "grade" has the value "B-", and therefore, "gr" has the	
+		numeric value you answered in question 4(E) above, then what value will
+		the instruction at offset 954, "mov    (%rdx,%rax,1),%eax", put into 
+		%eax? Hint: Use your answer to 5(B) and 5(C) and figure out what the 
+		effective address of the first operand is in terms of offsets. 
+		Then, use the offset in the table above to find the value.
+		: -234
+		
+	E. Given the same assumption as part D, namely "grade" has the value "B-",
+		what value will the instruction at offset 961, "add    %rdx,%rax", 
+		put into register %rax? : 982
+		
+	F. Given the same assumption as part D, namely "grade" has the value "B-",
+		what is the C label for the block of code that is the target of the 
+		instruction at offset 964, "jmpq   *%rax"? : case Bm: return 27;
+		
+	G. Does this switch instruction use a jump table? : Yes

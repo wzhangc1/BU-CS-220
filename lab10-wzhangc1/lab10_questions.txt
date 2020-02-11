@@ -1,0 +1,90 @@
+1. Looking at the x86 code derived from the factorial function in fact.c, 
+	what is the offset from %rbp of:
+	
+	A. the caller's %rbp value : 0
+	B. the parameter "n" : -0x14
+	C. the variable "answer" : -0x4
+	D. the return address if a lower level function is invoked: 0x30 * n
+	
+2. If you look at the stack.txt file produced by the Makefile, you will notice
+	that the first stack dump that is produced occurs when factorial(1) has 
+	been called, even though main called factorial(4). Why is this true?
+	: because it is a recursive function, it solves the base case first
+	
+	
+	
+3. Looking at stack.txt at the top, when n==1, the top (highest address) 
+	stack frame is main's stack frame. Look at the next stack frame, the 
+	first frame that represents an invocation of the factorial function.
+	
+	A. What is the value of the parameter, "n" : 4
+	B. What is the value of the "answer" variable (in hex) : 0xbadddadd
+	
+4. Looking at stack.txt when n==1, the bottom (lowest address) stack frame is
+	also an invocation of the factorial function. In this frame,
+	
+	A. What is the value of the parameter, "n" : 1
+	B. What is the value of the "answer" variable (in hex) : 0x1
+	
+5. Looking at stack.txt when n=4, the bottom (lowest address) stack frame is
+	still an invocation of the factorial function. In this frame,
+	
+	A. What is the value of the parameter, "n" : 4
+	B. What is the value of the "answer" variable (in hex) : 0x18
+	
+6. The stack.c code that prints lines of stack frames prints several values on
+	a single line. First, it prints the address of the memory, followed by an 
+	arrow (->), followed by the 8 byte (64 bit) big endian interpretation of the
+	value at that memory, followed by an equals sign (=), followed by the big
+	endian interpretation of two 4 byte (32 bit) values at that memory.
+	
+	If one line of output looks like:
+	
+	0x7ffcd76991d8 -> badddadd00000000 = 00000000 badddadd		
+	
+	Why do the 4 byte values look reversed?
+	
+	: because big endian stores the most significant bits first
+	
+	
+	
+7. If you run "make stack.txt" twice, will you get the same results? Why or
+	why not?
+	
+	: No, because addresses may change depending on how memory is handled
+	
+	
+	
+8. In stack.c, in the printStackInfo function, when we print the frames, we use
+	the statement "for(j=nptrs-3;j>0; j--)".
+	
+	A. Why do we start with the frame at nptrs-3?
+	
+	: because nptrs represents the number of pointer, which includes two 
+	libraries, which are two pointers we do not care about, and we 
+	substract one bacause we start at 0
+	
+	
+	B. Why do we end with the frame at 1, and not 0?
+	
+	: because we do not care about printStackInfo
+	
+	
+	
+9. The Makefile builds the fact binary using the -rdynamic flag as a gcc 
+	compiler option. If we do not specify that flag when we compile, will the 
+	code still compile and run? If so, does anything change in the stack.txt
+	output file other than the changes already identified in question 7?
+	
+	: They still run and compile. However, stack.txt changes the offset 
+	without specifying the function used, it just calls main.
+	
+	
+10. In stack.c, we used the special keyword 'asm ("rbp")' to enable us to use
+	the %rbp register as a C variable. Can you think of any other reasons to
+	get access to x86 registers in C code? If so, name one or two...
+	
+	: The program can read the raw data for a function parameters 
+	independent from data type by accessing a x86 register. Using a 
+	register to maintain a certain value eliminates the need to declare 
+	a new variable to keep that value.

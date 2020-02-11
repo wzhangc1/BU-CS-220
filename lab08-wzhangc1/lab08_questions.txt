@@ -1,0 +1,75 @@
+1. Where (in terms of the stack registers %rsp and/or %rbp) are the following local variables:
+
+	A. r : -0x4(%rbp) <-- Answer provided to show what we are looking for
+	B. c : -0x8(%rbp)
+	C. matrix : -0x50(%rbp)
+	D. &matrix[2][4] : -0x18(%rbp)
+	E. rowVal : -0xc(%rbp)
+
+2. Look at the x86 code derived from the C instruction : "rowVal=matrix[r-1][0]+10;"
+
+	A. In the instruction "mov    -0x4(%rbp),%eax", what value is put in %eax? : r <-- Answer provided
+	B. In the instruction "sub    $0x1,%eax", what value is put in %eax? : r-1
+	C. In the instruciton "movslq %eax,%rdx", what value is put in %rdx? : r-1
+	D. In the instruction "mov    %rdx,%rax", what value is put in %rax? : r-1
+	E. In the instruction "shl    $0x2,%rax", what value is put in %rax? : 4r-4
+	F. In the instruction "add    %rdx,%rax", what value is put in %rax? : 5r-5
+	G. In the instruction "shl    $0x2,%rax", what value is put in %rax? : 20r-20
+	H. In the instruction "sub    $0x50,%rax", what value is put in %rax? : &matrix[r-1][0]
+	I. In the instruction "mov    (%rax),%eax", what value is put in %eax? : matrix[r-1][0]
+	
+	Notice the effort the compiler made to multiply [r-1] by the length of a row of matrix.
+	The compiler chose to use several very fast instructions instead of a single (slow) imul
+	instruction!
+	
+	Notice the compile chose NOT to use table addressing mode for this instruction because
+	table addressing mode is slower than simple indirect addressing.
+	
+3. Look at the x86 code derived from the C instruction : "matrix[r][c]=100 + rowVal + c;"
+
+	A. In the instruction "mov    -0xc(%rbp),%eax", what is put in %eax? : rowVal
+	B. In the instruction "lea    0x64(%rax),%edx", what is the decimal value of 0x64? : 100
+	C. i. What is the relationship between the %eax register in A and the %rax register in B? :
+			%eax is the right most 32-bits of %rax
+		ii. Could there have been a cltq instruction between the mov and the lea? :
+			Yes
+		iii. Why did the compiler leave out the cltq instrunction between the mov and lea? :
+			Because there is no need to convert constants to quads
+	D. In the instruction "lea    0x64(%rax),%edx", what value is put in %edx? : matrix[r][0]
+	E. In the instruction "mov    -0x8(%rbp),%eax", what value is put in %eax? : c
+	F. In the instruction "lea    (%rdx,%rax,1),%ecx", what value is put in %ecx? : 100+rowVal+c
+			
+	G. In the instruction "mov    -0x4(%rbp),%ecx", what value is put in %ecx? : r
+	H. In the instruction "add    %rdx,%rax", what value is put in %rax? : 5r
+	I. In the instruction "add    %rsi,%rax", what value is put in %rax? : 5r+c
+	J. In the instruction "mov    %ecx,-0x50(%rbp,%rax,4)" ...
+		i. What is the "offset" : -0x50
+		ii. What is the "base" : %rbp
+		iii. What does base+offset point to? : matrix
+		iv. What is the "row" : %rax
+		v. What is the "width" : 4
+		vi. Does this instruction treat matrix as a 2D matrix or a 1D vector? : 1D vector
+		
+4. What is the address in memory of gmat[0][0]? : (%rip)+(%rax*2)
+
+		Note: The code accesses gmat as an offset from the current value of the instruction
+		pointer (%rip), but the comments in the objdump give the actual address.
+		
+5. Look at the x86 instructions generated from the C line: "gmat[r][c]=-100 - rowVal - c;"
+
+	A. In the instruction "mov    $0xffffff9c,%eax", what is the value of the constant? : -100
+	B. In the instruction "sub    -0xc(%rbp),%eax", what value is put in %eax? : -100-rowVal
+	C. In the instruction "mov    %eax,%ecx", what value is put in %ecx? : -100-rowVal-c
+	D. In the instruction "movslq %eax,%rsi", what value is put in %rsi? : c
+	E. In the instruction "movslq %eax,%rdx", what value is put in %rdx? : r
+	F. In the instruction "add    %rdx,%rax", what value is put in %rax? : 3r
+	G. In the instruction "add    %rsi,%rax", what value is put in %rax? : 3r+c
+	H. In the instruction "lea    0x0(,%rax,4),%rdx", what avlue is put in %rdx? : 4(3r+c)
+	I. In the instruction "mov    %ecx,(%rdx,%rax,1)" ...
+		i. What is the "offset"? in the table addressing mode? : 0
+		ii. What is the "base"? : %rdx
+		iii. What is the "row"? : %rax
+		iv. What is the "width"? : 1
+		v. What does the table address point to? : gmat
+		vi. Does this instruction treat gmat as a 2D matrix or a 1D vector? : 1D vector
+	

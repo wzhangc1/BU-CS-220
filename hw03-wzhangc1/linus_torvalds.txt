@@ -1,0 +1,2 @@
+Which mindset is right? Mine, of course. People who disagree with me are by definition crazy. (Until I change my mind, when they can suddenly become upstanding citizens. I'm flexible, and not black-and-white.)
+Christ, people. Learn C, instead of just stringing random characters together until it compiles (with warnings).

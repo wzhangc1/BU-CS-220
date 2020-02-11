@@ -1,0 +1,28 @@
+print "Running initialization gdb commands..."
+set variable $nack = 0
+set variable $rlev = 0
+set variable $rlim = 16
+
+break ack
+commands
+silent
+set variable $nack = $nack + 1
+set variable $rlev = $rlev + 1
+continue
+end
+
+break 24 if ($rlev >= $rlim)
+commands
+silent
+set variable $rlim = $rlim * 2
+printf "ack function invoked %d times\tlev function invoked %d times\n",$nack , $rlev
+end
+
+break 27
+commands
+silent
+set variable $rlev = $rlev - 1
+continue
+end
+
+run

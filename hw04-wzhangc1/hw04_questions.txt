@@ -1,0 +1,53 @@
+1. At the start of the main function, both %edi and %rsi are saved in the invocation record.
+	Why is the 32 bit version of the di register and the 64 bit version of the si register saved?
+	Why not 32 or 64 bit versions of both?
+	
+	Answer: rsi stores a char* pointer, and edi stores an integer 
+	
+2. What does the instruction "cmpl   $0x1,-0x14(%rbp)" do? What registers or memory does this
+	instruction change?
+	
+	Answer: compare 0x1 and argc, and change AF CF OF PF SF ZF
+	
+3. What registers or memory are consulted by the "jg     777 <main+0x37>" instruction to 
+	determine whether the jump should be taken or not?
+	
+	Answer: $0x1 and -0x14(%rbp), checks ZF, SF, OF
+	
+4. What is the condition, using C notation, evaluated by the two instructions in question 2
+	and 3, that causes a jump to the end of the if statement if true?
+	
+	Answer: if (1 > argc)
+	
+5. In the instruction "jmp    7d9 <main+0x99>", what registers or memory are consulted to
+	determine if the jump should be taken or not?
+	
+	Answer: $0x1 and -0x14(%rbp), the jump is unconditional
+	
+6. At offset 804, the instruction "jmp    881 <leftBit+0xa6>" is an unconditional jump. Why
+	does the C compiler jump over the body of the loop (the instructions between offset 806
+	and 87e) when first entering the loop?
+	
+	Answer: because w is less than or equal to 1
+	
+7. If the condition "w>1" is true at offset 885, what value does the instruction at 885 put
+	in the %rip register? (Express your answer as an offset, since the actual address depends
+	on where the UNIX loader puts your instructions in memory.)
+	
+	Answer: 9d6
+	
+8. What C code is implemented with the instruction at offset 89b, "movl   $0x1f,-0x4(%rbp)"
+
+	Answer: argv[1] = 31;
+	
+9. At offset 8ac, the instruction "sar    %cl,%edx" performs a shift arithmetic right on the
+	value in %edx. Why did the compiler choose an arithmetic instead of a logical shift
+	instruction?
+	
+	Answer: Because edx is signed
+	
+10. The "test   %eax,%eax" instruction at offset 8b3 is followed by the "jump equal",
+	"je     8be <printBin+0x2e>"	instruction at offset 8b5. What condition (expressed
+	in C notation) is being checked by these two lines of code?
+	
+	Answer: if ((n & 1 << i) > 0)
